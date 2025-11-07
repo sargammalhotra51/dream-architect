@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dream Architect - MVP</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<style>
+ 
+  
+  :root {
+    --tw-bg-opacity: 1 !important;
+    --tw-text-opacity: 1 !important;
+    color: rgb(15 23 42 / var(--tw-text-opacity)) !important; 
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+  }
+
+  [class*="bg-blue-"] {
+    background-color: rgb(37 99 235 / var(--tw-bg-opacity)) !important; 
+  }
+  [class*="bg-indigo-"] {
+    background-color: rgb(79 70 229 / var(--tw-bg-opacity)) !important; 
+  }
+  [class*="bg-gray-"] {
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity)) !important; 
+  }
+  [class*="text-gray-"] {
+    color: rgb(55 65 81 / var(--tw-text-opacity)) !important;
+  }
+  [class*="text-white"] {
+    color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+  }
+
+</style>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-6">
+  <div class="w-full max-w-2xl">
+    <header class="bg-white shadow rounded p-6 mb-6">
+      <h1 class="text-2xl font-bold text-center">Dream Architect</h1>
+      <p class="text-sm text-gray-600 text-center mt-1">Reverse-engineer your goals into milestones & tasks</p>
+    </header>
+
+    <section class="bg-white p-6 rounded shadow mb-6">
+      <form id="goalForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Goal title</label>
+          <input id="title" required class="mt-1 block w-full rounded border p-2" placeholder="e.g., Become a Frontend Engineer" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Target date</label>
+          <input id="targetDate" type="date" required min="" class="mt-1 block w-full rounded border p-2" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Hours per week</label>
+          <input id="hoursPerWeek" type="number" min="1" value="10" class="mt-1 block w-full rounded border p-2" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Short description (optional)</label>
+          <textarea id="description" rows="2" class="mt-1 block w-full rounded border p-2"></textarea>
+        </div>
+
+        <div>
+          <button id="generateBtn" type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded">Generate Plan</button>
+        </div>
+      </form>
+    </section>
+
+    <div id="planArea" class="bg-white p-6 rounded-md max-w-3xl mx-auto shadow-sm"></div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
